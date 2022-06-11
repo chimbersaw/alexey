@@ -22,14 +22,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:2.7.0")
 }
 
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "ru.chimchima.alexey.AlexeyApplicationKt"
-    }
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
-}
-
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
