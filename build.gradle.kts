@@ -22,6 +22,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:2.7.0")
 }
 
+tasks.withType<Jar> {
+    manifest {
+        attributes["Main-Class"] = "ru.chimchima.alexey.AlexeyApplication"
+    }
+}
+
+
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
