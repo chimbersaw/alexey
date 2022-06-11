@@ -17,14 +17,4 @@ class PiratService {
             .contentType(MediaType.APPLICATION_OCTET_STREAM)
             .body(resource)
     }
-
-    fun getPirat2(): ResponseEntity<InputStreamResource> {
-        val file = File("pirat/all2.mp3")
-        val resource = InputStreamResource(file.inputStream())
-
-        return ResponseEntity.ok()
-            .contentLength(file.length())
-            .contentType(MediaType.APPLICATION_OCTET_STREAM)
-            .body(resource)
-    }
 }
