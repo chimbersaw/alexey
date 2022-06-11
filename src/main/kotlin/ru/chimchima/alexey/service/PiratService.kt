@@ -5,15 +5,15 @@ import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import java.io.File
-import java.io.FileInputStream
 
 @Service
 class PiratService {
     fun getPirat(): ResponseEntity<InputStreamResource> {
-        val resource = InputStreamResource(FileInputStream("pirat.mp3"))
+        val file = File("pirat/all.mp3")
+        val resource = InputStreamResource(file.inputStream())
 
         return ResponseEntity.ok()
-            .contentLength(File("pirat.mp3").length())
+            .contentLength(file.length())
             .contentType(MediaType.APPLICATION_OCTET_STREAM)
             .body(resource)
     }
