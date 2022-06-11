@@ -8,6 +8,6 @@ import ru.chimchima.alexey.service.PiratService
 class PiratController(
     private val piratService: PiratService
 ) {
-    @GetMapping("/pirat.mp3")
+    @GetMapping("/pirat-all.mp3")
     fun pirat() = piratService.getPirat()
 }
