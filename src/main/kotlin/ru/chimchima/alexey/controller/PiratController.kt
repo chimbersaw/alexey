@@ -9,6 +9,6 @@ import javax.servlet.http.HttpServletResponse
 class PiratController(
     private val piratService: PiratService
 ) {
-    @GetMapping("/kal.mp3")
+    @GetMapping("/")
     fun pirat(response: HttpServletResponse) = piratService.getPirat(response)
 }
