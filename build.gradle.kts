@@ -24,7 +24,7 @@ dependencies {
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "ru.chimchima.alexey.AlexeyApplication"
+        attributes["Main-Class"] = "ru.chimchima.alexey.AlexeyApplicationKt"
     }
 }
 
